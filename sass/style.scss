@@ -1,0 +1,41 @@
+@mixin border-radius ($br) {
+  -webkit-border-radius: $br;
+  -moz-border-radius: $br;
+  -o-border-radius: $br; 
+  border-radius:  $br;
+  behavior: url(PIE.htc);
+}
+
+@mixin box-shadow ($bsx, $bsy, $bsz, $bsc) {
+  -webkit-box-shadow: $bsx $bsy $bsz $bsc;
+  -moz-box-shadow: $bsx $bsy $bsz $bsc;
+  -o-box-shadow: $bsx $bsy $bsz $bsc; 
+  box-shadow:  $bsx $bsy $bsz $bsc;
+  filter: progid:DXImageTransform.Microsoft.Shadow(Strength=$bsz, Direction=135, Color='$bsc');
+  behavior: url(PIE.htc);
+}
+
+@mixin linear-gradient ($lgs, $lgf) {
+  background-color: $lgs;
+  background: -webkit-linear-gradient(top, $lgs, $lgf);
+  background:         linear-gradient(to bottom, $lgs, $lgf);
+  filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=,startColorstr='$lgs', endColorstr='$lgf');
+  -pie-background:    linear-gradient(to bottom, $lgs, $lgf);
+  behavior: url(PIE.htc);
+}
+
+@mixin opacity ($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity);
+}
+
+@mixin background-size ($bas) {
+    -webkit-background-size: $bas;
+    -moz-background-size: $bas;
+    background-size: $bas;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( src='', sizingMethod='scale');
+}
+
+@mixin fill ($opacity) {
+  filter: alpha(opacity=$opacity);
+}
